@@ -9,3 +9,4 @@ outputs/*
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
 *-checkpoint.ipynb
+notebooks/.ipynb_checkpoints
