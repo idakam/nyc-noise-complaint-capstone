@@ -5,8 +5,7 @@ from streamlit_folium import st_folium
 from datetime import datetime, timedelta
 
 import folium
-
-from prediction_utils import (
+from src.prediction_utils import (
     load_models, 
     load_clean_data,
     get_season,
