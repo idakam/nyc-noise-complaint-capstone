@@ -34,14 +34,12 @@ df = load_all_data()
 st.sidebar.title("NYC 311 Noise Complaint Predictor")
 st.sidebar.markdown("**Predict complaint patterns based on historical data**")
 
-# CHANGED: Reordered options - Hotspot Map first, Date-Based Prediction last
 tool = st.sidebar.radio("Select Tool:", ["Hotspot Map", "Weekly Pattern", "Date-Based Prediction"])
 
 # Main content
 
-# CHANGED: Hotspot Map is now first
 if tool == "Hotspot Map":
-    st.title("🗺️ Noise Complaint Hotspot Map")
+    st.title("Noise Complaint Hotspot Map")
     st.markdown("Visualize expected high-complaint areas for a specific date and time.")
 
     col1, col2, col3, col4 = st.columns(4)
@@ -92,7 +90,7 @@ if tool == "Hotspot Map":
         st.markdown("---")
         st.components.v1.html(st.session_state.map_html, width=1200, height=600, scrolling=False)
 
-        st.subheader("🔥 Top 10 Expected High-Complaint Areas")
+        st.subheader("Top 10 Expected High-Complaint Areas")
         top_predictions = sorted(st.session_state.map_predictions, key=lambda x: x['volume'], reverse=True)[:10]
 
         for i, p in enumerate(top_predictions, 1):
@@ -104,9 +102,9 @@ if tool == "Hotspot Map":
             with col3:
                 st.write(f"{p['volume']:.1f} complaints/week")
 
-# Weekly Pattern stays in the middle
+# Weekly Pattern  
 elif tool == "Weekly Pattern":
-    st.title("📅 Weekly Complaint Pattern")
+    st.title("Weekly Complaint Pattern")
     
     st.markdown("View expected complaint patterns throughout a week for a specific neighborhood.")
     
@@ -174,9 +172,8 @@ elif tool == "Weekly Pattern":
             with col2:
                 st.write(f"{row['Volume']:.1f} complaints")
 
-# CHANGED: Date-Based Prediction is now last
 else:  # Date-Based Prediction
-    st.title("📅 Predict Noise Complaints for a Specific Date")
+    st.title("Predict Noise Complaints for a Specific Date")
     
     st.markdown("Select a future date and time to see expected complaint volumes based on historical patterns.")
     
