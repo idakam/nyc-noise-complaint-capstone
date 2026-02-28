@@ -1,4 +1,5 @@
 data/processed/noise_cleaned.csv
+data/processed/noise_cleaned.parquet
 data/processed/aggregated_data.csv
 .venv/
 venv/
