@@ -85,7 +85,7 @@ if tool == "Hotspot Map":
                 st.session_state.pop('map_html', None)
                 st.session_state.pop('map_predictions', None)
 
-    # Render from session state — persists across reruns, no flickering
+    # Render html hotspot map from session state 
     if 'map_html' in st.session_state:
         st.markdown("---")
         st.components.v1.html(st.session_state.map_html, width=1200, height=600, scrolling=False)
